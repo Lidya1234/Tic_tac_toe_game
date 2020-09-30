@@ -22,11 +22,12 @@ end
 
 boardisfull = false
 choicevalid = true
-until boardisfull 
+until boardisfull
   puts "Enter your choice  #{player1}"
   loop do
     choice = gets.chomp.to_i
     break if choicevalid == true
+
     puts 'Enter valid choice'
   end
   puts "#{player1} you chose #{choice} "
@@ -34,6 +35,7 @@ until boardisfull
   loop do
     choice = gets.chomp.to_i
     break if choicevalid == true
+
     puts 'Enter valid choice'
   end
   puts "#{player2} you chose #{choice}"
