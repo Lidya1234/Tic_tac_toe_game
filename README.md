@@ -1,4 +1,4 @@
-# Tic_tac_toe
+# Tic_tac_toe_game
 
 This is a project to build a tic tac toe game using ruby.
 
