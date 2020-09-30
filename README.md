@@ -13,7 +13,7 @@ This is a project to build a tic tac toe game using ruby.
  
 
 ## Live Demo
-Live Demo : [The-livedemo-link](https://repl.it/@Lidya1234/Tictactoe)
+Live Demo : [The-livedemo-link](https://repl.it/github/Lidya1234/Tic_tac_toe_game)
 
 <h1>Getting Started</h1>
 
