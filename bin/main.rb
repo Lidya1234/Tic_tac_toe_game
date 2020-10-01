@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-board_arr = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 def board(board_arr)
   puts "#{board_arr[0]} | #{board_arr[1]}| #{board_arr[2]}"
   puts '__|__|__'
@@ -9,13 +9,13 @@ def board(board_arr)
 end
 
 def draw
-  board_arr = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+  board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 end
 
 def getplayesrs
   validname = true
-  player = ""
-  sign = ""
+  player = ''
+  sign = ''
   loop do
     player = gets.chomp
     break if validname == true
