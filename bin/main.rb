@@ -52,10 +52,12 @@ end
 
 puts 'Enter name of first player'
 player1 = getplayesrs
-
+puts "#{player1}  Enter your sign"
+sign1 = getsign
 puts 'Enter name of second player'
 player2 = getplayesrs
-
+puts "#{player2}  Enter your sign"
+sign2 = getsign
 board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 board(board_arr)
@@ -69,7 +71,7 @@ until boardisfull
   print "available moves #{availablemoves}" # updates after every move
   if turn.odd?
 
-    puts "select a move  #{player1}"
+    puts "select a move  #{player1} #{sign1}"
     choice = move
     puts "#{player1} you chose #{choice} "
 
@@ -81,7 +83,7 @@ until boardisfull
 
   else
 
-    puts "select a move  #{player2}"
+    puts "select a move  #{player2} #{sign2}"
     choice = move
     puts "#{player2} you chose #{choice} "
 
