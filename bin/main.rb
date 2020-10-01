@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+
 def board(board_arr)
   puts "#{board_arr[0]} | #{board_arr[1]}| #{board_arr[2]}"
   puts '__|__|__'
@@ -64,6 +64,7 @@ player2 = getplayesrs
 
 puts "#{player2} Enter sign"
 player2sign = getsign
+board_arr = draw
 board(board_arr)
 
 availablemoves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
