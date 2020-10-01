@@ -9,13 +9,13 @@ def board(board_arr)
 end
 
 def draw
-  board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+  # to reset the array value
 end
 
 def getplayesrs
   validname = true
   player = ''
-  sign = ''
+
   loop do
     player = gets.chomp
     break if validname == true
@@ -37,9 +37,9 @@ def getsign
   sign
 end
 
-def move(player)
+def move
   choicevalid = true
-  choice = ""
+  choice = ''
   loop do
     choice = gets.chomp.to_i
 
@@ -54,14 +54,12 @@ puts 'Enter name of first player'
 player1 = getplayesrs
 
 puts "#{player1} Enter sign"
-player1sign = getsign
-
 
 puts 'Enter name of second player'
 player2 = getplayesrs
 
 puts "#{player2} Enter sign"
-player2sign = getsign
+
 board_arr = draw
 board(board_arr)
 
@@ -71,32 +69,28 @@ boardisfull = false
 winningmove = false
 turn = 1
 until boardisfull
+  print "available moves #{availablemoves}" # updates after every move
+  if turn.odd?
 
-  if turn % 2 == 1
-
-    print "available moves #{availablemoves}" # updates after every move
     puts "select a move  #{player1}"
-    choice = move(player1)
+    choice = move
     puts "#{player1} you chose #{choice} "
     if winningmove
       puts "Winner #{player1}"
       break
     end
-    turn += 1
+
   else
 
-    print "available moves #{availablemoves}" # updates after every move
     puts "select a move  #{player2}"
-    choice = move(player2)
+    choice = move
     puts "#{player2} you chose #{choice} "
     if winningmove
       puts "Winner #{player2}"
       break
     end
-    turn += 1
+
   end
-  if turn == 5
-    boardisfull = true
-  end
+  turn += 1
+  boardisfull = true if turn == 5
 end
-board_arr = draw
