@@ -19,25 +19,45 @@ loop do
 
   puts 'Enter valid name'
 end
-
+availablemoves = [1, 2, 3, 4, 5]
 boardisfull = false
 choicevalid = true
+winningmove = false
 until boardisfull
-  puts "Enter your choice  #{player1}"
+  puts "Board displayed"
+  puts "select a move  #{player1}"
+  print availablemoves
+  puts
   loop do
     choice = gets.chomp.to_i
+
     break if choicevalid == true
 
-    puts 'Enter valid choice'
+    puts 'Invalid move'
+    puts "board displayed"
   end
   puts "#{player1} you chose #{choice} "
-  puts "Enter your choice  #{player2}"
+  if winningmove
+    puts "Winner #{player1}"
+    break
+  end
+  puts "Board displayed"
+  puts "Select a move  #{player2}"
+  print availablemoves # prints available moves
+  puts
   loop do
     choice = gets.chomp.to_i
-    break if choicevalid == true
+    break if choicevalid == true # check validity of the choice
 
-    puts 'Enter valid choice'
+    puts 'Invalid move'
+    puts "board displayed"
   end
   puts "#{player2} you chose #{choice}"
+  winningmove = true
+  if winningmove
+    puts "Winner #{player2}"
+    break
+  end
+
   boardisfull = true
 end
