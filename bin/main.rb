@@ -2,9 +2,9 @@
 board_arr = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 def board(board_arr)
   puts "#{board_arr[0]} | #{board_arr[1]}| #{board_arr[2]}"
-  puts "__|__|__"
+  puts '__|__|__'
   puts "#{board_arr[3]} | #{board_arr[4]}| #{board_arr[5]}"
-  puts "__|__|__"
+  puts '__|__|__'
   puts "#{board_arr[6]} | #{board_arr[7]}| #{board_arr[8]}"
 end
 
@@ -20,19 +20,19 @@ def getplayesrs
     player = gets.chomp
     break if validname == true
 
-    "Invalid name:Please enter valid Name"
+    'Invalid name:Please enter valid Name'
   end
   player
 end
 
 def getsign
   validsign = true
-  sign = ""
+  sign = ''
   loop do
     sign = gets.chomp
     break if validsign == true
 
-    "Invalid sign:Please enter valid sign"
+    'Invalid sign:Please enter valid sign'
   end
   sign
 end
@@ -49,17 +49,17 @@ def move(player)
   end
   choice
 end
-player1 = ""
-player1sign = ""
-puts "Enter name of first player"
+player1 = ''
+player1sign = ''
+puts 'Enter name of first player'
 player1 = getplayesrs
 
 puts "#{player1} Enter sign"
 player1sign = getsign
 
-player12 = ""
-player2sign = ""
-puts "Enter name of second player"
+player12 = ''
+player2sign = ''
+puts 'Enter name of second player'
 player2 = getplayesrs
 
 puts "#{player2} Enter sign"
