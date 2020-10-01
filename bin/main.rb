@@ -53,14 +53,11 @@ end
 puts 'Enter name of first player'
 player1 = getplayesrs
 
-puts "#{player1} Enter sign"
-
 puts 'Enter name of second player'
 player2 = getplayesrs
 
-puts "#{player2} Enter sign"
+board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
-board_arr = draw
 board(board_arr)
 
 availablemoves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
