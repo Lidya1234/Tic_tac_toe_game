@@ -72,6 +72,8 @@ until boardisfull
     puts "select a move  #{player1}"
     choice = move
     puts "#{player1} you chose #{choice} "
+
+    board(board_arr)
     if winningmove
       puts "Winner #{player1}"
       break
@@ -82,6 +84,8 @@ until boardisfull
     puts "select a move  #{player2}"
     choice = move
     puts "#{player2} you chose #{choice} "
+
+    board(board_arr)
     if winningmove
       puts "Winner #{player2}"
       break
