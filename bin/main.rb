@@ -49,16 +49,14 @@ def move(player)
   end
   choice
 end
-player1 = ''
-player1sign = ''
+
 puts 'Enter name of first player'
 player1 = getplayesrs
 
 puts "#{player1} Enter sign"
 player1sign = getsign
 
-player12 = ''
-player2sign = ''
+
 puts 'Enter name of second player'
 player2 = getplayesrs
 
