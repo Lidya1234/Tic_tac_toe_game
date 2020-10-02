@@ -1,4 +1,4 @@
-$array =['', '', '','','','','','']
+require_relative 'player.rb'
 class Game
     
     WINNERS_SET = [
@@ -54,6 +54,10 @@ def winner
 WINNERS_SET.each{|x| return true if x.all?( @filledpositions)}
  false
 end
+
+def draw
+    @board_array =['', '', '','','','','','',''] 
+  end
  def boardisfull?
     available_moves=[]
      @board_array.each{|x| if x == ''
@@ -73,6 +77,7 @@ turn =1
       board
       if winner
         puts "Winner #{player1}"
+
         break
       end
   
@@ -89,7 +94,8 @@ turn =1
   
     end
     turn += 1
-
+ draw
+ board
   end
 end
   

@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
+require_relative '../game.rb'
+require_relative '../player.rb'
 
 
-
-def draw
-  # to reset the array value
-end
 
 def getplayesrs
   validname = true
