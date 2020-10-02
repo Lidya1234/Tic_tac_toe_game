@@ -21,3 +21,14 @@ end
 def validatesign(sign)
 return false if sign.nil?
 end
+def movement(player ,position)
+ 
+    if array[position] == ''
+    array[position] = @sign 
+    player1 << position if player == player1
+    player2 << position
+
+    else
+     return 'Invalid position'
+    end
+end
