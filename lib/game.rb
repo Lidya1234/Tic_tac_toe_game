@@ -21,26 +21,3 @@ end
 def validatesign(sign)
 return false if sign.nil?
 end
-def movement(player ,position)
- 
-    if array[position] == ''
-    array[position] = @sign 
-    player1 << position if player == player1
-    player2 << position
-
-    else
-     return 'Invalid position'
-    end
-end
-def winner
-    if player1
-winner_set.each{|x| return true if x.all?(player1)}
-if player2
-    winner_set.each{|x| return true if x.all?(player2)}   
-false
-end
- def boardfull
-    available_moves=[]
-    array.each{|x| if x == ""  available_moves << x  return false}
-     true   
- end
