@@ -1,12 +1,6 @@
 #!/usr/bin/env ruby
 
-def board(board_arr)
-  puts "#{board_arr[0]} | #{board_arr[1]}| #{board_arr[2]}"
-  puts '__|__|__'
-  puts "#{board_arr[3]} | #{board_arr[4]}| #{board_arr[5]}"
-  puts '__|__|__'
-  puts "#{board_arr[6]} | #{board_arr[7]}| #{board_arr[8]}"
-end
+
 
 def draw
   # to reset the array value
@@ -17,9 +11,7 @@ def getplayesrs
   player = ''
 
   loop do
-    player = gets.chomp
-    break if validname == true
-
+    player = gets.chomp 
     'Invalid name:Please enter valid Name'
   end
   player
@@ -51,49 +43,21 @@ def move
 end
 
 puts 'Enter name of first player'
-player1 = getplayesrs
-puts "#{player1}  Enter your sign"
+player1name = getplayesrs
+puts "#{player1name}  Enter your sign"
 sign1 = getsign
+player1=player.new(player1name ,sign1)
 puts 'Enter name of second player'
-player2 = getplayesrs
-puts "#{player2}  Enter your sign"
+player2name = getplayesrs
+if player2name == player1name
+puts "Already taken:Enter a different name"
+player2name = getplayesrs
+puts "#{player2name}  Enter your sign"
 sign2 = getsign
-board_arr = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-
-board(board_arr)
-
-availablemoves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-boardisfull = false
-
-winningmove = false
-turn = 1
-until boardisfull
-  print "available moves #{availablemoves}" # updates after every move
-  if turn.odd?
-
-    puts "select a move  #{player1} #{sign1}"
-    choice = move
-    puts "#{player1} you chose #{choice} "
-
-    board(board_arr)
-    if winningmove
-      puts "Winner #{player1}"
-      break
-    end
-
-  else
-
-    puts "select a move  #{player2} #{sign2}"
-    choice = move
-    puts "#{player2} you chose #{choice} "
-
-    board(board_arr)
-    if winningmove
-      puts "Winner #{player2}"
-      break
-    end
-
-  end
-  turn += 1
-  boardisfull = true if turn == 5
-end
+if sign1 == sign2
+puts "Already taken:Enter a different sign"
+sign2 =getsign
+player2= Player.new(player2name ,sign2)
+startgame=Game.new(player1 ,player2)
+startgame.board
+startgame.playgame

@@ -1,3 +1,6 @@
 class palyer
-    def initialize
+    def initialize(player ,sign)
+        @player=player
+        @sign =sign
+    end
 end
