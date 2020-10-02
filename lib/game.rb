@@ -32,3 +32,15 @@ def movement(player ,position)
      return 'Invalid position'
     end
 end
+def winner
+    if player1
+winner_set.each{|x| return true if x.all?(player1)}
+if player2
+    winner_set.each{|x| return true if x.all?(player2)}   
+false
+end
+ def boardfull
+    available_moves=[]
+    array.each{|x| if x == ""  available_moves << x  return false}
+     true   
+ end
