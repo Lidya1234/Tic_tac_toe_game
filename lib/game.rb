@@ -13,7 +13,7 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-   @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ', ' ']
+   @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ']
     @filledpos_player1 = []
     @filledpos_player2 = []
   end
@@ -44,13 +44,16 @@ class Game
   end
 
   def draw
-     @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ', ' ']
+     @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ',]
+     game_board
   end
 
   def boardfull
-   
-    @board.each {|x| return false  if x == ' '}
-    true
+   if  @board.any?{|x| x == ' '}
+   return false
+  else
+    return true
+    end
   end
  def move
   choicevalid = false
@@ -67,4 +70,60 @@ class Game
     puts 'Invalid move'
   end
   choice
+end
+
+
+  def movement(position ,sign)
+   loop do
+    if  @board[position-1] == ' '
+  
+    @board[position-1] = sign
+    break
+    else
+     puts 'Invalid position'
+     position = move
+     end
+    end
+
+  end
+
+   def winner(winner)
+    if winner == @player1
+    puts "hello there"
+      WINNERS_SET.each { |x|return true if (x & @filledpos_player1 == x)}
+     false
+    else
+     
+      WINNERS_SET.each { |x|return true if (x & @filledpos_player2 == x)}
+      false
+    end
+    false
+  end
+  def playgame
+ turn = 1
+   
+    until boardfull
+   
+     choice = move
+      if turn.odd?
+     movement(choice ,@player1.sign)
+     @filledpos_player1 << choice
+    player = @player1
+     else
+     movement(choice ,@player2.sign)
+       @filledpos_player2 << choice
+      player = @player2
+     end
+     won =winner(player)
+     puts won
+    if won == true
+      return player
+    end
+     
+      turn += 1
+      game_board
+    end
+    return
+    
+  end
 end
