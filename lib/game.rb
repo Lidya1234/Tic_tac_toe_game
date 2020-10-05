@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/MethodLength
 require_relative '../main.rb'
 class Game
   WINNERS_SET = [
@@ -117,3 +118,4 @@ class Game
     draw
   end
 end
+# rubocop:enable Metrics/MethodLength
