@@ -75,18 +75,18 @@ class Game
     if winner == @player1
 
       WINNERS_SET.each { |x| return true if x & @filledpos_player1 == x }
-      
+
     else
 
       WINNERS_SET.each { |x| return true if x & @filledpos_player2 == x }
-      
+
     end
     false
   end
 
   def playgame
     turn = 1
-    player = ''
+
     until boardfull
 
       choice = move
@@ -94,10 +94,12 @@ class Game
         movement(choice, @player1.sign)
         @filledpos_player1 << choice
         player = @player1
+
       else
         movement(choice, @player2.sign)
         @filledpos_player2 << choice
         player = @player2
+
       end
       won = winner(player)
 
