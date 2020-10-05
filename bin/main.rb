@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-require_relative '../game.rb'
-require_relative '../player.rb'
+require_relative './lib/game.rb'
+require_relative './lib/player.rb'
 class Validator
   def initialize(player, sign)
     @player = player
