@@ -13,7 +13,7 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-   @board_array = [' ', ' ', '5 ', ' ', ' ', ' ', ' ', ' ', ' ']
+   @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ', ' ']
     @filledpos_player1 = []
     @filledpos_player2 = []
   end
@@ -21,12 +21,12 @@ class Game
  
 
   
-  def board
-    puts "#{@board_array[0]} | #{@board_array[1]}| #{@board_array[2]}"
+  def game_board
+    puts "#{@board[0]} | #{@board[1]}| #{@board[2]}"
     puts puts '__|__|__'
-    puts "#{@board_array[3]} | #{@board_array[4]}| #{@board_array[5]}"
+    puts "#{@board[3]} | #{@board[4]}| #{@board[5]}"
     puts puts '__|__|__'
-    puts "#{@board_array[6]} | #{@board_array[7]}| #{@board_array[8]}"
+    puts "#{@board[6]} | #{@board[7]}| #{@board[8]}"
   end
 
 
@@ -44,77 +44,27 @@ class Game
   end
 
   def draw
-    @board_array = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+     @board = [' ', ' ' , ' ', ' ', ' ' ,' ' , ' ', ' ', ' ', ' ']
   end
 
   def boardfull
-    available_moves = []
-    @board_array.each do |x|
-      if x == ' '
-        available_moves << x
-        return false
-      end
-    end
+   
+    @board.each {|x| return false  if x == ' '}
     true
   end
  def move
-  choicevalid = true
-  choice = ''
+  choicevalid = false
+  choice = ' '
   puts "Enter your choice here"
   loop do
-    choice = gets.chomp.to_i
-
+    choice = gets.chomp
+    if choice =~ /^-?[0-9]+$/
+      choicevalid =true
+      choice =choice.to_i
+    end
     break if choicevalid == true
 
     puts 'Invalid move'
   end
   choice
-end
-
-
-  def movement(position)
-   
-     if position.between?(1, 9) && @board_array[position]==' '
-     puts "this s"
-    @board_array[position] = "y"
-     else
-     puts 'Invalid position'
-     end
-  end
-  def playgame
-
-   
-    until boardfull
-      puts "hi"
-      turn = 1
-      if turn.odd?
- puts "hello"
-        choice = move
-    
-        movement(choice)
-       
-          puts  @board_array[choice]
-        if winner?(@player1)
-          @player1
-          break
-        end
-
-      else
-
-        choice = move
-    
-        @board_array[choice] == @player1.sign
-        movement(choice)
-        
-        if winner?(@player2)
-          @player2
-          break
-        end
-
-      end
-      turn += 1
-     
-      board
-    end
-  end
 end
