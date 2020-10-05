@@ -9,26 +9,26 @@ class Validator
 
   def choice
     puts 'Enter your choice'
-    return
+    nil
   end
 
   def position
     puts 'Invalid position'
-    return
+    nil
   end
 
   def move
     puts 'Invalid move'
-    return
+    nil
   end
 
   def won
-    puts "winner:Congratulations "
+    puts 'winner:Congratulations '
   end
 
   def game_over
     puts 'Game Over'
-    return
+    nil
   end
 end
 

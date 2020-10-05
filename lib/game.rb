@@ -29,15 +29,15 @@ class Game
   end
 
   def draw
-    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',]
+    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     game_board
   end
 
   def boardfull
     if @board.any? { |x| x == ' ' }
-      return false
+      false
     else
-      return true
+      true
     end
   end
 
@@ -74,11 +74,11 @@ class Game
   def winner(winner)
     if winner == @player1
 
-      WINNERS_SET.each { |x| return true if (x & @filledpos_player1 == x) }
+      WINNERS_SET.each { |x| return true if x & @filledpos_player1 == x }
       false
     else
 
-      WINNERS_SET.each { |x| return true if (x & @filledpos_player2 == x) }
+      WINNERS_SET.each { |x| return true if x & @filledpos_player2 == x }
       false
     end
     false
@@ -111,9 +111,7 @@ class Game
       turn += 1
       game_board
     end
-    if won == false
-      @validate.gameover
-    end
+    @validate.gameover if won == false
     draw
   end
 end
