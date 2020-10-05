@@ -75,11 +75,11 @@ class Game
     if winner == @player1
 
       WINNERS_SET.each { |x| return true if x & @filledpos_player1 == x }
-      false
+      
     else
 
       WINNERS_SET.each { |x| return true if x & @filledpos_player2 == x }
-      false
+      
     end
     false
   end
