@@ -1,5 +1,4 @@
 # rubocop:disable Metrics/MethodLength
-# rubocop: disable Metrics/PerceivedComplexity
 class Game
   WINNERS_SET = [
     [1, 2, 3],
@@ -127,4 +126,3 @@ class Game
   end
 end
 # rubocop:enable Metrics/MethodLength
-# rubocop: enable Metrics/PerceivedComplexity
