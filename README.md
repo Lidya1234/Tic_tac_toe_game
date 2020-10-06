@@ -36,7 +36,7 @@ step5 -To stop the game while it is running type CTRL+c on the keyboard
 ## Game Instructions
 If you don not know the game ,to have an idea how it works refer:https://en.wikipedia.org/wiki/Tic-tac-toe
 
-  #The project's Structure
+  # Project Structure
         
         |__.rubocop.yml
         |__README.md

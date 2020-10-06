@@ -7,8 +7,8 @@ class Validator
     @sign = sign
   end
 
-  def choice
-    puts 'Enter your choice'
+  def choice(player)
+    puts "#{player.player} Enter your choice"
     nil
   end
 
@@ -16,18 +16,20 @@ class Validator
     gets.chomp
   end
 
-  def position
-    puts 'Invalid position'
+  def position(player)
+    puts "#{player.player} Invalid position"
     nil
   end
 
-  def move
-    puts 'Invalid move'
+  def move(player)
+    puts "#{player.player} Invalid move"
     nil
   end
 
-  def won
-    puts 'winner found:Congratulations '
+  def won(player)
+    
+    
+    puts " winner #{player.player} :Congratulations "
   end
 
   def game_over
