@@ -115,7 +115,7 @@ class Game
       turn += 1
       game_board
     end
-    @validate.gameover if won == false
+    @validate.game_over if won == false
     draw
   end
 end
