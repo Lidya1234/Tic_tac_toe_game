@@ -1,5 +1,5 @@
 # rubocop:disable Metrics/MethodLength
-require_relative '../bin/main.rb'
+
 class Game
   WINNERS_SET = [
     [1, 2, 3],
@@ -47,7 +47,8 @@ class Game
     choice = ' '
     @validate.choice
     loop do
-      choice = gets.chomp
+      choice = @validate.getchoice
+
       if choice =~ /^-?[0-9]+$/
         choicevalid = true
         choice = choice.to_i

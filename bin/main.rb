@@ -12,6 +12,10 @@ class Validator
     nil
   end
 
+  def getchoice
+    gets.chomp
+  end
+
   def position
     puts 'Invalid position'
     nil
@@ -23,7 +27,7 @@ class Validator
   end
 
   def won
-    puts 'winner:Congratulations '
+    puts 'winner found:Congratulations '
   end
 
   def game_over
