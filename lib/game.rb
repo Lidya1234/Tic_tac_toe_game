@@ -1,5 +1,5 @@
 # rubocop:disable Metrics/MethodLength
-
+# rubocop: disable Metrics/PerceivedComplexity
 class Game
   WINNERS_SET = [
     [1, 2, 3],
@@ -30,6 +30,7 @@ class Game
   end
 
   def draw
+    @validate.draw
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     game_board
   end
@@ -42,10 +43,12 @@ class Game
     end
   end
 
-  def move
+  def move(turn)
     choicevalid = false
     choice = ' '
-    @validate.choice
+
+    player_turn = turn.odd? ? @player1 : @player2
+    @validate.choice(player_turn)
     loop do
       choice = @validate.getchoice
 
@@ -55,20 +58,21 @@ class Game
       end
       break if choicevalid == true
 
-      @validate.move
+      @validate.move(player_turn)
     end
     choice
   end
 
-  def movement(position, sign)
+  def movement(position, sign, turn)
+    player_turn = turn.odd? ? @player1 : @player2
     loop do
       if @board[position - 1] == ' '
 
         @board[position - 1] = sign
         break
       else
-        @validate.position
-        position = move
+        @validate.position(player_turn)
+        position = move(turn)
       end
     end
   end
@@ -88,17 +92,19 @@ class Game
 
   def playgame
     turn = 1
-
+    draw = false
     until boardfull
 
-      choice = move
+      choice = move(turn)
       if turn.odd?
-        movement(choice, @player1.sign)
+
+        movement(choice, @player1.sign, turn)
         @filledpos_player1 << choice
         player = @player1
 
       else
-        movement(choice, @player2.sign)
+
+        movement(choice, @player2.sign, turn)
         @filledpos_player2 << choice
         player = @player2
 
@@ -108,15 +114,19 @@ class Game
       if won == true
 
         game_board
-        @validate.won
+        @validate.won(player)
         break
       end
 
       turn += 1
       game_board
     end
-    @validate.game_over if won == false
-    draw
+    if draw == true
+      draw
+    elsif won == false
+      @validate.game_over
+    end
   end
 end
 # rubocop:enable Metrics/MethodLength
+# rubocop: enable Metrics/PerceivedComplexity
