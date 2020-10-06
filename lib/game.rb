@@ -30,6 +30,7 @@ class Game
   end
 
   def draw
+    @validate.draw
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     game_board
   end
@@ -45,8 +46,8 @@ class Game
   def move(turn)
     choicevalid = false
     choice = ' '
-   
-    player_turn =turn.odd? ? @player1 : @player2
+
+    player_turn = turn.odd? ? @player1 : @player2
     @validate.choice(player_turn)
     loop do
       choice = @validate.getchoice
@@ -91,21 +92,19 @@ class Game
 
   def playgame
     turn = 1
-
+    draw = false
     until boardfull
 
       choice = move(turn)
       if turn.odd?
-    
-       
-        
-        movement(choice, @player1.sign,turn)
+
+        movement(choice, @player1.sign, turn)
         @filledpos_player1 << choice
         player = @player1
 
       else
-        
-        movement(choice, @player2.sign,turn)
+
+        movement(choice, @player2.sign, turn)
         @filledpos_player2 << choice
         player = @player2
 
@@ -122,8 +121,11 @@ class Game
       turn += 1
       game_board
     end
-    @validate.game_over if won == false
-    draw
+    if draw == true
+      draw
+    elsif won == false
+      @validate.game_over
+    end
   end
 end
 # rubocop:enable Metrics/MethodLength

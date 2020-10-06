@@ -27,19 +27,20 @@ class Validator
   end
 
   def won(player)
-    
-    
     puts " winner #{player.player} :Congratulations "
   end
 
   def game_over
     puts 'Game Over'
-    nil
+  end
+
+  def draw
+    puts 'Game was a draw.'
   end
 end
 
 def validname(player)
-  return false if player.nil?
+  return false if player.nil? || player == ''
 
   true
 end
@@ -51,7 +52,7 @@ def getplayesrs
     player = gets.chomp
     break if validname(player) == true
 
-    'Invalid name:Please enter valid Name'
+    puts 'Invalid name:Please enter a valid Name'
   end
   player
 end
