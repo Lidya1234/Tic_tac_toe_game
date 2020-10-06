@@ -29,10 +29,9 @@ class Game
     puts "#{@board[6]} | #{@board[7]}| #{@board[8]}"
   end
 
-  def draw
-    @validate.draw
+  def board_draw
+    @validate.draw_board
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-    game_board
   end
 
   def boardfull
@@ -66,6 +65,7 @@ class Game
   def movement(position, sign, turn)
     player_turn = turn.odd? ? @player1 : @player2
     loop do
+      system 'cls'
       if @board[position - 1] == ' '
 
         @board[position - 1] = sign
@@ -116,16 +116,14 @@ class Game
         game_board
         @validate.won(player)
         break
+      else
+        draw = true
       end
 
       turn += 1
       game_board
     end
-    if draw == true
-      draw
-    elsif won == false
-      @validate.game_over
-    end
+    board_draw if draw == true
   end
 end
 # rubocop:enable Metrics/MethodLength

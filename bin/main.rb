@@ -34,7 +34,7 @@ class Validator
     puts 'Game Over'
   end
 
-  def draw
+  def draw_board
     puts 'Game was a draw.'
   end
 end
