@@ -91,9 +91,9 @@ class Game
 
   def playgame
     turn = 1
-    draw = false
-    until boardfull
 
+    until boardfull
+      draw = false
       choice = move(turn)
       if turn.odd?
 
