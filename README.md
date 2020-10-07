@@ -34,13 +34,17 @@ Git and Ruby.
 5.The game is going to prompt the player to enter a choice.
 
 6.play the game by entering numbers from 1 to 9 only.
+
 7.It is going to give invalid move error message, if the number is not in 1 to 9 range.
-8.If the entered choice is in the range of 1 to 9 but it is already taken it is going to print invalid position error message.  
+
+8.If the entered choice is in the range of 1 to 9 but it is already taken it is going to print invalid position error message. 
+
 9.If a player filled consecutive row ,columns or diagonal it announces the winner 
+
 10.If it does not find a winner
 
 ## Game Instructions
-If you don not know the game ,to have an idea how it works refer:https://en.wikipedia.org/wiki/Tic-tac-toe
+<img src="game_rules.png">
 
   # Project Structure
         
@@ -66,14 +70,9 @@ If you don not know the game ,to have an idea how it works refer:https://en.wiki
 
 
 ## 🤝 Contributing
-
- Contributions, issues and feature requests are welcome!
-
-Feel free to check the issues page.
-
 Show your support Give a ⭐️ if you like this project!
 
-Acknowledgments Hat tip to anyone whose code was used Inspiration etc
+
 
 📝 License 
 This project has no license
