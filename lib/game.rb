@@ -91,7 +91,7 @@ class Game
 
   def playgame
     turn = 1
- 
+
     until boardfull
       draw = false
       choice = move(turn)
