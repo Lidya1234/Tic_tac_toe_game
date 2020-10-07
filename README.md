@@ -6,7 +6,7 @@ This is a project to build a Tic tac toe game(a 3X3 board_game) using ruby and p
 
 - Ruby
 - GIT
-- VSCODE
+- VS CODE
 ## Prerequisites 
 Text editor
 Github profile
@@ -33,17 +33,18 @@ Git and Ruby.
 
 5.The game is going to prompt the player to enter a choice.
 
-6.play the game by entering numbers from 1 to 9 only.
+6.Play the game by entering numbers from 1 to 9 only.
 
-7.It is going to give invalid move error message, if the number is not in 1 to 9 range.
+7.It is going to give an invalid move error message if the number is not in 1 to 9 range.
 
-8.If the entered choice is in the range of 1 to 9 but it is already taken it is going to print invalid position error message. 
+8.If the entered choice is in the range of 1 to 9 but it is already taken it is going to print an invalid position error message. 
 
-9.If a player filled consecutive row ,columns or diagonal it announces the winner 
+9.If a player filled consecutive row, columns, or diagonal it announces the winner 
 
 10.If it does not find a winner
 
 ## Game Instructions
+Tic-tac-toe is a board game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. It is a solved game with a forced draw assuming best play from both players.
 <img src="game_rules.png">
 
   # Project Structure
