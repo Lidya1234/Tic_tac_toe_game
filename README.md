@@ -8,9 +8,9 @@ This is a project to build a Tic tac toe game(a 3X3 board_game) using ruby and p
 - GIT
 - VS CODE
 ## Prerequisites 
-Text editor
-Github profile
-Git and Ruby.
+- Text editor
+- Github profile
+- Git and Ruby.
  
 ## How To Run The Game
 
